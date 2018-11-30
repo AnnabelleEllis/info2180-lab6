@@ -1,5 +1,9 @@
 header{
     background-color: purple;
+    /*width:50px;*/
+    padding:50px;
+    text-align: center;
+    margin: auto;
 }
 
 h1{

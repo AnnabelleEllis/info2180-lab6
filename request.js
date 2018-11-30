@@ -2,30 +2,39 @@ window.onload = function(){
   
 var allDef = document.getElementById("allDef");
 var message = document.getElementById("search");
+var demo2 = document.getElementById("demo2");
 
 allDef.addEventListener("click",function(){
     console.log(" All Definitions Button CLicked!");
     
     
       var xhttp = new XMLHttpRequest();
+       xhttp.open("GET", "request.php?q=&all=true", true);
+       
       xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
              var response = xhttp.responseXML;
+             console.log(response);
+             
              var storeResults = document.querySelector('#demo2');
              var storeAllDef = response.getElementsByTagName('definition');
             
             var results = document.createElement('ol');
-            allDef.appendChild(storeResults);
             for(var i = 0; i < storeAllDef.length; i++){
             var defList = document.createElement('li');
-            var text = document.creatTextNode(storeAllDef[i].children[0].childNode[0].nodeValues);
+            
+            console.log(storeAllDef[i]);
+            // console.log(storeAllDef[i].childNodes[0]);
+            
+            var text = document.createTextNode(storeAllDef[i].childNodes[0].nodeValue);
               defList.appendChild(text);
-              results.append(defList);
+              results.appendChild(defList);
+               storeResults.appendChild(results);
             }
         
         }
       };
-      xhttp.open("GET", "request.php?q=&all=true", true);
+     
       xhttp.send();
 });
 
