@@ -1,7 +1,7 @@
 header{
     background-color: purple;
     /*width:50px;*/
-    padding:50px;
+    padding:30px;
     text-align: center;
     margin: auto;
 }
@@ -10,3 +10,22 @@ h1{
     color:white;
     font-size: 40px;
 }
+
+/*#getText{*/
+/*   display: inline-block;*/
+   /*margin-left: 5px;*/
+   /*  margin: 30px;*/
+/*}*/
+
+
+#search{
+   margin-right: 10px;
+   margin-left: 10px;
+}
+
+#styler{
+    display:flex;
+   
+}
+
+input[type="text"]{  line-height: 28px; }
